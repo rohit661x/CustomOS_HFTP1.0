@@ -1,0 +1,31 @@
+{
+  "quick_lane": {
+    "samples": 20000,
+    "configs": [
+      {
+        "name": "baseline_sw_uc_cons",
+        "fence_conservative": 1,
+        "doorbell_wc": 0,
+        "pin_core": 1,
+        "cache_warm": 0
+      },
+      {
+        "name": "hw_wc_aggr",
+        "fence_conservative": 0,
+        "doorbell_wc": 1,
+        "pin_core": 1,
+        "cache_warm": 1
+      }
+    ],
+    "budgets": {
+      "p50_cycles_max": 400,
+      "p99_growth_pct_max": 5.0,
+      "cv_max": 0.08
+    }
+  },
+  "nightly": {
+    "samples": 200000,
+    "noise_cocktail": true,
+    "archive": true
+  }
+}
