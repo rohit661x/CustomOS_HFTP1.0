@@ -2,9 +2,12 @@
 build/
 obj/
 bin/
-*.bin
 *.elf
 *.img
+# Compiled binary artifacts (not data files)
+bootloader.bin
+kernel.bin
+os.bin
 *.o
 *.a
 *.so
