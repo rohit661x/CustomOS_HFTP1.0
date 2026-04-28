@@ -354,7 +354,8 @@ static void handle_packet(uint32_t idx, uint32_t plen, timing_sample_t *ts) {
     TAP(*ts, STAGE_BOOK);     /* book state updated */
     TAP(*ts, STAGE_DECISION); /* decision: send immediately */
 
-    send_ouch(next_order_id++, price, shares, ts);
+    /* Send using persisted book state, not raw message fields */
+    send_ouch(next_order_id++, best_bid_price, best_bid_shares, ts);
 
     /* Structured timing line — only on new best-bid events */
     serial_write("BID ");
