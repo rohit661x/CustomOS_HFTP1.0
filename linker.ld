@@ -4,8 +4,8 @@ ENTRY(_start)
 
 SECTIONS
 {
-  /* Load the kernel at 1 MiB physical (matches memmap.h RX_DESC_BASE layout) */
-  . = 0x100000;
+  /* Load the kernel at 64 KiB physical — safely below memmap.h's 1 MiB data structures */
+  . = 0x10000;
 
   .text ALIGN(4) :
   {
